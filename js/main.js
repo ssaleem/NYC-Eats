@@ -76,12 +76,12 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
 initMap = () => {
   // sw start
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').then(function(reg) {
+    navigator.serviceWorker.register('/Restaurant-Reviews-App/sw.js').then(function(reg) {
 
       if(reg.active) {
         console.log('Service worker is active');
       }
-      console.log(`Service worker scope: ${reg.scope}`);
+      // console.log(`Service worker scope: ${reg.scope}`);
 
     }).catch(function(error) {
       console.log('Service worker registration failed: ' + error);
@@ -195,8 +195,6 @@ createRestaurantHTML = (restaurant) => {
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
   infoDiv.append(address);
-
-  // li.append(infoDiv);
 
   const more = document.createElement('a');
   more.innerHTML = 'View Details';

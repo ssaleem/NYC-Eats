@@ -2,9 +2,9 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('v1').then(function(cache) {
       return cache.addAll([
-        '/index.html',
-        '/css/styles.css',
-        '/js/main.js',
+        '/Restaurant-Reviews-App/index.html',
+        '/Restaurant-Reviews-App/css/styles.css',
+        '/Restaurant-Reviews-App/js/main.js',
       ]);
     })
   );
@@ -22,7 +22,7 @@ self.addEventListener('fetch', function(event) {
 
         caches.open('v1').then(function (cache) {
           cache.put(event.request, responseClone);
-          console.log(`in cache put ${event.request.url}`);
+          // console.log(`in cache put ${event.request.url}`);
         });
         return response;
       });
