@@ -8,6 +8,22 @@ var markers = []
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
+  // sw registeration code begins
+  // make sure the browser supoorts service worker
+  if ('serviceWorker' in navigator) {
+    // navigator.serviceWorker.register('/Restaurant-Reviews-App/sw.js').then(function(reg) {
+    navigator.serviceWorker.register('./sw.js')
+    .then(function(reg) {
+      if(reg.active) {
+        console.log('Service worker is active');
+        console.log(`Service worker scope: ${reg}`);
+      }
+    })
+    .catch(function(error) {
+      console.log('Service worker registration failed: ' + error);
+    });
+  }
+  // sw registeration code ends
   initMap(); // added
   fetchNeighborhoods();
   fetchCuisines();
@@ -74,21 +90,6 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
  * Initialize leaflet map, called from HTML.
  */
 initMap = () => {
-  // sw start
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/Restaurant-Reviews-App/sw.js').then(function(reg) {
-
-      if(reg.active) {
-        console.log('Service worker is active');
-      }
-      // console.log(`Service worker scope: ${reg.scope}`);
-
-    }).catch(function(error) {
-      console.log('Service worker registration failed: ' + error);
-    });
-  }
-  // sw end
-
   self.newMap = L.map('map', {
         center: [40.722216, -73.987501],
         zoom: 12,
