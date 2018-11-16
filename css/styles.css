@@ -70,8 +70,8 @@ nav h1 {
 nav h1 a {
   color: #fff;
   font-size: calc(12px + 0.5vw);
-  letter-spacing: 6px;
-  text-transform: uppercase;
+  letter-spacing: 4px;
+  /*text-transform: uppercase;*/
 }
 
 .breadcrumb {
