@@ -39,8 +39,14 @@ section {
   display: block;
 }
 
-.maincontent,
 .maincontent-restaurant {
+  background-color: #eee;
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.maincontent {
   background-color: #eee;
   min-height: 100%;
   display: flex;
