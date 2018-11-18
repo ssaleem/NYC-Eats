@@ -8,26 +8,32 @@ var markers = []
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
-  // sw registeration code begins
-  // make sure the browser supoorts service worker
-  if ('serviceWorker' in navigator) {
-    // navigator.serviceWorker.register('/Restaurant-Reviews-App/sw.js').then(function(reg) {
-    navigator.serviceWorker.register('./sw.js')
-    .then(function(reg) {
-      if(reg.active) {
-        console.log('Service worker is active');
-        console.log(`Service worker scope: ${reg}`);
-      }
-    })
-    .catch(function(error) {
-      console.log('Service worker registration failed: ' + error);
-    });
-  }
-  // sw registeration code ends
-  initMap(); // added
+  registerServiceWorker();
+  initMap();
   fetchNeighborhoods();
   fetchCuisines();
 });
+
+/**
+ * Register service worker
+ */
+registerServiceWorker = () => {
+  // make sure the browser supoorts service worker
+  if ('serviceWorker' in navigator) {
+
+    // navigator.serviceWorker.register('./sw.js')
+    navigator.serviceWorker.register('/NYC-Eats/sw.js')
+    .then(function(reg) {
+      if(reg.active) {
+        console.log('Service worker is active');
+        console.log(`Service worker scope: ${reg.scope}`);
+      }
+    })
+    .catch(function(error) {
+      console.log(`Service worker registration failed: ${error}`);
+    });
+  }
+}
 
 /**
  * Fetch all neighborhoods and set their HTML.
@@ -106,18 +112,6 @@ initMap = () => {
 
   updateRestaurants();
 }
-/* window.initMap = () => {
-  let loc = {
-    lat: 40.722216,
-    lng: -73.987501
-  };
-  self.map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: loc,
-    scrollwheel: false
-  });
-  updateRestaurants();
-} */
 
 /**
  * Update page and map for current restaurants.
@@ -228,14 +222,3 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 
 }
-/* addMarkersToMap = (restaurants = self.restaurants) => {
-  restaurants.forEach(restaurant => {
-    // Add marker to the map
-    const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.map);
-    google.maps.event.addListener(marker, 'click', () => {
-      window.location.href = marker.url
-    });
-    self.markers.push(marker);
-  });
-} */
-
