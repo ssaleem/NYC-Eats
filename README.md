@@ -1,14 +1,24 @@
-![Lighthouse Performance Badge](lighthouse_performance.svg)
-![Lighthouse Accessibility Badge](lighthouse_accessibility.svg)
+<a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fssaleem.github.io%2FNYC-Eats%2F">
+        <img src="lighthouse_performance.svg"
+            alt="Lighthouse Performance Badge"></a>
+<img src="lighthouse_accessibility.svg"
+            alt="Lighthouse Accessibility Badge">
+
 # NYC Eats
 This project is part of [Udacity](https://www.udacity.com/)'s Front end Nanodegree. The purpose of this project is to transform an existing application with static design that lacks accessibility into a **responsive, offline-first, and accessibility complying** web application. 
 
 This application uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://www.mapbox.com/) to show NYC restaurants on map along with their details including address, hours and reviews. The project is based on starter code and assets from [this repository](https://github.com/udacity/mws-restaurant-stage-1). 
 <!-- ![App Screenshot](App-screenshot.png) -->
 
+## Contents
+- [Features Implemented](#features-implemented)
+- [Built/optimized with](#built/optimized-with)
+- [Live Version](#live-version)
+- [About Lighthouse Audit](#about-lighthouse-audit)
+
 ## Features Implemented
 
-## Responsive Design
+### Responsive Design
 The design is transformed to achieve responsiveness on different devices. CSS Flexbox along with media queries and responsive images are used to adapt the layout across different screen sizes.
 
 ![Responsive design demonstration](responsive.png)
