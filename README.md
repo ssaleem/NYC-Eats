@@ -19,7 +19,7 @@ This application uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://
 ## Features Implemented
 
 ### Responsive Design
-The design is transformed to achieve responsiveness on different devices. CSS Flexbox along with media queries and responsive images are used to adapt the layout across different screen sizes.
+The design is transformed to achieve responsiveness on different devices. Sass, CSS Flexbox along with media queries, and responsive images are used to adapt the layout across different screen sizes.
 
 ![Responsive design demonstration](responsive.png)
 
@@ -39,9 +39,11 @@ Application accessibility for screen reader use is improved by making DOM order 
 - [CacheStorage](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage) - An interface that provides a master directory of all the named caches that can be accessed by a ServiceWorker or other type of worker or `window` scope.
 - [Cache](https://developer.mozilla.org/en-US/docs/Web/API/Cache) - Provides a storage mechanism for Request/Response object pairs that are cached, for example as part of the ServiceWorker life cycle.
 - [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) - An interface for fetching resources.
+- [Sass](https://sass-lang.com/) - A mature, stable, and powerful professional grade CSS extension language. 
 - [CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) - CSS layout module to design flexible responsive layout structure without using float or positioning.
 - [CSS Media Queries](https://www.w3schools.com/css/css3_mediaqueries.asp) - A popular technique to deliver a tailored style sheet to desktops, laptops, tablets, and mobile phones by defining different style rules for different media types.
 - [Grunt](https://gruntjs.com/) Plugins - grunt-contrib-imagemin, grunt-responsive-images
+- [gulp](https://www.npmjs.com/package/gulp) Plugins - browser-sync, gulp-sass, gulp-cssnano
 
 ## Live Version
 Live version of this app can be found [here](https://ssaleem.github.io/NYC-Eats/).
