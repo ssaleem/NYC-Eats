@@ -1,0 +1,40 @@
+@import 'breakpoints';
+
+.map-container {
+	width: 100%;
+	padding: 6px;
+	@media only screen and (min-width: $screen-lg-min) {
+		width: 64%;
+		padding: 2px 8px;
+	}
+	@media only screen and (min-width: 1400px) {
+		width: 75%;
+	}
+}
+
+.restaurant-map-container {
+	width: 100%;
+	padding: 6px;
+	@media only screen and (min-width: 768px) {
+		width: 50%;
+		padding: 18px;
+		margin: auto;
+	}
+	@media only screen and (min-width: 992px) {
+		width: 60%;
+		padding: calc(38px + 1vw);
+		margin: 0;
+	}
+}
+
+#map {
+	height: 280px;
+	border-radius: 6px;
+	@media only screen and (min-width: $screen-md-min) {
+		height: 380px;
+	}
+	@media only screen and (min-width: $screen-lg-min) {
+		width: 100%;
+		height: 100%;
+	}
+}

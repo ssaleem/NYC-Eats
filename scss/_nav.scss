@@ -1,0 +1,54 @@
+@import 'breakpoints';
+@import 'colors';
+
+nav {
+	width: 100%;
+	background-color: $header-background-color;
+	text-align: center;
+	color: $header-color;
+	@media only screen and (min-width: $screen-lg-min) {
+		padding: 20px;
+		margin-bottom: 6px;
+	}
+}
+
+nav h1 {
+	margin: auto;
+	padding: 12px;
+}
+
+nav h1 a {
+	color: inherit;
+	font-size: calc(20px + 1.5vw);
+	letter-spacing: 4px;
+}
+
+.breadcrumb {
+	padding: 4px;
+	list-style: none;
+	font-size: calc(12px + 0.5vw);
+	margin: 0;
+	@media only screen and (min-width: $screen-md-min) {
+		font-size: 13px;
+	}
+}
+
+/* Display list items side by side */
+.breadcrumb li {
+	display: inline;
+	color: inherit;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+.breadcrumb li+li:before {
+	padding: 6px;
+	content: "/\00a0";
+}
+
+.breadcrumb li a {
+	color: $secondary-background-color;
+}
+
+.breadcrumb li a:hover {
+	text-decoration: underline;
+}

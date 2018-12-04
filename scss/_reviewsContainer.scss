@@ -1,0 +1,40 @@
+@import 'breakpoints';
+
+.reviews-container {
+	padding: 10px 10px 20px;
+	width: 100%;
+}
+
+.reviews-container h2 {
+	color: $body-color;
+	font-size: calc(14px + 0.5vw);
+	text-align: center;
+	@media only screen and (min-width: $screen-md-min) {
+		padding: 8px;
+	    font-weight: bold;
+	}
+}
+
+#reviews-list {
+	margin: 0;
+	padding: 0;
+}
+
+#reviews-list li {
+	background-color: lighten( $body-background-color, 10% );
+	display: block;
+	list-style-type: none;
+	margin: 6px auto;
+	overflow: hidden;
+	padding: 2px 10px;
+	position: relative;
+	width: 85%;
+	box-shadow: 0 10px 6px -6px #777;
+	@media only screen and (min-width: $screen-md-min) {
+		font-size: 14px;
+	}
+}
+
+#reviews-list li p {
+	margin: 0 0 10px;
+}

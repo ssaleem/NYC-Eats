@@ -1,0 +1,16 @@
+@import 'breakpoints';
+
+footer {
+	display: block;
+	color: #4A4A4A;
+	font-size: calc(10px + 0.25vw);
+	letter-spacing: 1px;
+	padding: 4px;
+	text-align: center;
+	@media only screen and (min-width: $screen-lg-min) {
+		font-size: 11px;
+	}
+	@media only screen and (min-width: $screen-xl-min) {
+		padding: 0;
+	}
+}
